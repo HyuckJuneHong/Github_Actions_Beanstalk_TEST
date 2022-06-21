@@ -20,5 +20,5 @@ sudo docker push ${DOCKER_IMAGE}
 echo "docker push completed"
 
 #ssh : 암호 통신을 이용하여 원격 호스트에 연결.
-echo ">>>ssh to server..."
-ssh ubuntu@ip-172-31-35-97 "sudo sh ./nonstop.sh ${DOCKER_IMAGE}"
+#echo ">>>ssh to server..."
+#ssh ubuntu@ip-172-31-35-97 "sudo sh ./nonstop.sh ${DOCKER_IMAGE}"
