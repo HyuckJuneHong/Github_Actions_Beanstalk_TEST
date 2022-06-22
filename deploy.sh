@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 #TIMESTAMP 변수 생성 후 현재 시각으로 초기화
 TIMESTAMP=`date +%s`
