@@ -15,6 +15,7 @@ echo "docker login completed"
 
 sudo docker build -t ${DOCKER_IMAGE} .
 echo "docker build completed"
+
 sudo docker push ${DOCKER_IMAGE}
 echo "docker push completed"
 
