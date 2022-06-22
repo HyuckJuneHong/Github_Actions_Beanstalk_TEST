@@ -7,7 +7,5 @@ ARG JAR_FILE=build/libs/*.jar
 # 변수에 저장된 것을 컨테이너 실행시 이름을 app.jar파일로 변경하여 컨테이너에 저장. 즉, 위에 선언한 JAR_FILE 을 app.jar 로 복사합니다.
 COPY ${JAR_FILE} app.jar
 
-RUN chmod +x build/lib/app
-
 # 빌드된 이미지가 run될 때 실행할 명령어, 즉, jar 파일을 실행하는 명령어(java -jar jar파일) 입니다.
 ENTRYPOINT ["java","-jar","/app.jar"]
