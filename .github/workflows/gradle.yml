@@ -37,22 +37,22 @@ jobs:
       run: echo "CurrentTime=${{steps.current-time.outputs.formattedTime}}"
       shell: bash
 
-    - name: Generate Deployment Package
-      run: |
-        mkdir -p deploy
-        cp build/libs/AWS_Security_TEST-0.0.1-SNAPSHOT.jar deploy/application.jar
-        cp Procfile deploy/Procfile
-        cp -r .ebextensions deploy/.ebextensions
-        cp -r .platform deploy/.platform
-        cd deploy && zip -r deploy.zip .
+#    - name: Generate Deployment Package
+#      run: |
+#        mkdir -p deploy
+#        cp build/libs/AWS_Security_TEST-0.0.1-SNAPSHOT.jar deploy/application.jar
+#        cp Procfile deploy/Procfile
+#        cp -r .ebextensions deploy/.ebextensions
+#        cp -r .platform deploy/.platform
+#        cd deploy && zip -r deploy.zip .
 
-    - name: Beanstalk Deploy
-      uses: einaregilsson/beanstalk-deploy@v21
-      with:
-        aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
-        aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-        application_name: Popool-beanstalk
-        environment_name: Popool-beanstalk-test-env
-        version_label: 	Sample Application
-        region: ap-northeast-2
-        deployment_package: deploy/deploy.zip
+#    - name: Beanstalk Deploy
+#      uses: einaregilsson/beanstalk-deploy@v21
+#      with:
+#        aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
+#        aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
+#        application_name: Popool-beanstalk
+#        environment_name: Popool-beanstalk-test-env
+#        version_label: 	Sample Application
+#        region: ap-northeast-2
+#        deployment_package: deploy/deploy.zip
